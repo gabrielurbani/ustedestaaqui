@@ -1,37 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <title>Arboleda</title>
+    <meta charset="utf-8" />
     <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js" type="text/javascript"></script>
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/mappa-mundi@0.0.4"></script>
+    <script src="./app.js"></script>
 </head>
 
 <body>
-    <script>
-        let myMap;
-        let canvas;
-        const MAPPA = new Mappa('Leaflet');
-        const COORDENADAS = {
-            lat: -34.599722,
-            lng: -58.381944,
-            zoom: 11.5,
-            style: "http://{s}.tile.osm.org/{z}/{x}/{y}.png"
-        }
 
-        function setup() {
-            canvas = createCanvas(800, 640);
-            myMap = MAPPA.tileMap(COORDENADAS);
-            myMap.overlay(canvas);
-
-        }
-
-        function draw() {
-
-        }
-    </script>
 </body>
 
 </html>
