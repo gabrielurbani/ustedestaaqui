@@ -17,45 +17,45 @@ function setup() {
 
 function draw() {
 
-}*/
-    window.addEventListener('load', inicio, false);
+}*/"use strict";
+window.addEventListener('load', inicio, false);
 
-    let gyroscope = new Gyroscope({frequency: 60});
+let gyroscope = new Gyroscope({frequency: 60});
 
-    gyroscope.addEventListener('reading', e => {
-       document.getElementById('gyro').innerHTML=
-         'Gyroscope axis X:'+ gyroscope.x+
-         'Gyroscope axis y:'+ gyroscope.y+
-         'Gyroscope axis z:'+ gyroscope.z+
-      console.log("Angular velocity along the X-axis " + gyroscope.x);
-      console.log("Angular velocity along the Y-axis " + gyroscope.y);
-      console.log("Angular velocity along the Z-axis " + gyroscope.z);
-    })
-   gyroscope.start();
+gyroscope.addEventListener('reading', e => {
+   document.getElementById('gyro').innerHTML=
+     'Gyroscope axis X:'+ gyroscope.x+
+     'Gyroscope axis y:'+ gyroscope.y+
+     'Gyroscope axis z:'+ gyroscope.z+
+  console.log("Angular velocity along the X-axis " + gyroscope.x);
+  console.log("Angular velocity along the Y-axis " + gyroscope.y);
+  console.log("Angular velocity along the Z-axis " + gyroscope.z);
+})
+gyroscope.start();
 
-    function inicio() {
-        if (navigator.geolocation) {
-            navigator.geolocation.watchPosition(mostrarCoordenada);
-        } else {
-          alert('El navegador no dispone la capacidad de geolocalización');
-        }
-    };
+function inicio() {
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(mostrarCoordenada);
+    } else {
+      alert('El navegador no dispone la capacidad de geolocalización');
+    }
+};
 
-    function mostrarCoordenada(posicion) {
-        document.getElementById('dato').innerHTML=
-          'Latitud:'+posicion.coords.latitude+
-           '<br> Longitud:'+posicion.coords.longitude+
-           '<br>Exactitud:'+posicion.coords.accuracy+
-           '<br>Norte verdadero:'+posicion.coords.heading;      
-    };
+function mostrarCoordenada(posicion) {
+    document.getElementById('dato').innerHTML=
+      'Latitud:'+posicion.coords.latitude+
+       '<br> Longitud:'+posicion.coords.longitude+
+       '<br>Exactitud:'+posicion.coords.accuracy+
+       '<br>Norte verdadero:'+posicion.coords.heading;      
+};
 
 
-    var map = L.map('map').setView([51.505, -0.09], 13);
+var map = L.map('mapid').setView([-34.603259,-58.395201], 15);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-    L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
+L.marker([-34.603259,-58.395201]).addTo(map)
+.bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+.openPopup();
