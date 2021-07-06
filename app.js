@@ -26,7 +26,7 @@ function draw() {
        document.getElementById('gyro').innerHTML=
          'Gyroscope axis X:'+ gyroscope.x+
          'Gyroscope axis y:'+ gyroscope.y+
-         'Gyroscope axis z:'+ gyroscope.z+;
+         'Gyroscope axis z:'+ gyroscope.z+
       console.log("Angular velocity along the X-axis " + gyroscope.x);
       console.log("Angular velocity along the Y-axis " + gyroscope.y);
       console.log("Angular velocity along the Z-axis " + gyroscope.z);
