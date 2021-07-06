@@ -22,6 +22,8 @@ window.addEventListener('load', inicio, false);
 
 let gyroscope = new Gyroscope({frequency: 60});
 
+var map = L.map('mapid').setView([-34.603259,-58.395201], 15);
+
 gyroscope.addEventListener('reading', e => {
    document.getElementById('gyro').innerHTML=
      'Gyroscope axis X:'+ gyroscope.x+
@@ -42,20 +44,23 @@ function inicio() {
 };
 
 function mostrarCoordenada(posicion) {
+    let lat = posicion.coords.latitude;
+    let long = posicion.coords.longitude
+
     document.getElementById('dato').innerHTML=
-      'Latitud:'+posicion.coords.latitude+
-       '<br> Longitud:'+posicion.coords.longitude+
+      'Latitud:'+lat+
+       '<br> Longitud:'+long+
        '<br>Exactitud:'+posicion.coords.accuracy+
        '<br>Norte verdadero:'+posicion.coords.heading;      
-};
 
 
-var map = L.map('mapid').setView([-34.603259,-58.395201], 15);
+       L.marker([lat,long]).addTo(map)
+       .bindPopup('You are here.')
+       .openPopup();
+
+    };
+
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-
-L.marker([-34.603259,-58.395201]).addTo(map)
-.bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-.openPopup();
