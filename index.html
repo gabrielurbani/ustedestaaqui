@@ -7,42 +7,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
-  
-<script type="text/javascript">
-
-    window.addEventListener('load', inicio, false);
-
-    let gyroscope = new Gyroscope({frequency: 60});
-
-    gyroscope.addEventListener('reading', e => {
-       document.getElementById('gyro').innerHTML=
-         'Gyroscope axis X:'+ gyroscope.x+
-         'Gyroscope axis y:'+ gyroscope.y+
-         'Gyroscope axis z:'+ gyroscope.z+;
-      console.log("Angular velocity along the X-axis " + gyroscope.x);
-      console.log("Angular velocity along the Y-axis " + gyroscope.y);
-      console.log("Angular velocity along the Z-axis " + gyroscope.z);
-    })
-   gyroscope.start();
-  
-    function inicio() {
-        if (navigator.geolocation) {
-            navigator.geolocation.watchPosition(mostrarCoordenada);
-        } else {
-          alert('El navegador no dispone la capacidad de geolocalización');
-        }
-    };
-  
-    function mostrarCoordenada(posicion) {
-        document.getElementById('dato').innerHTML=
-          'Latitud:'+posicion.coords.latitude+
-           '<br> Longitud:'+posicion.coords.longitude+
-           '<br>Exactitud:'+posicion.coords.accuracy+
-           '<br>Norte verdadero:'+posicion.coords.heading;      
-    }
-
-       
-</script>  
+   
   <style>
   #mapid{
     height: 180px;
@@ -57,5 +22,6 @@
  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
+  <script src="app.js"></script>
 </body>
 </html>
