@@ -1,4 +1,4 @@
-let myMap;
+/*let myMap;
 let canvas;
 const MAPPA = new Mappa('Leaflet');
 const COORDENADAS = {
@@ -17,4 +17,4 @@ function setup() {
 
 function draw() {
 
-}
+}*/
