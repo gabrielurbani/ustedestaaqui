@@ -4,6 +4,10 @@
   <title>Arboleda</title>  
   <meta charset="UTF-8">
   
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+  
 <script type="text/javascript">
 
     window.addEventListener('load', inicio, false);
@@ -11,7 +15,7 @@
     let gyroscope = new Gyroscope({frequency: 60});
 
     gyroscope.addEventListener('reading', e => {
-       document.getElementById('dato').innerHTML=
+       document.getElementById('gyro').innerHTML=
          'Gyroscope axis X:'+ gyroscope.x+
          'Gyroscope axis y:'+ gyroscope.y+
          'Gyroscope axis z:'+ gyroscope.z+;
@@ -39,9 +43,19 @@
 
        
 </script>  
-  
-</head>
+  <style>
+  #mapid{
+    height: 180px;
+    }
+</style> 
+  </head>
 <body>
   <span id="dato"></span>
+  <span id='gyro'></span>
+   <div id="mapid"></div>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
 </body>
 </html>
