@@ -9,16 +9,32 @@
    crossorigin=""/>
    
   <style>
-  #mapid{
-    height: 300px;
-    width: 100%;
+    body{
+      box-sizing: border-box;
+    }
+    #container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    #mapid{
+      height: 80vh;
+      width: 95%;
+      margin: 0 auto;
+    }
+    span {
+      font-size: 1.5em;
     }
 </style> 
   </head>
 <body>
+  <div id="container">
   <span id="dato"></span>
   <span id='gyro'></span>
-   <div id="mapid"></div>
+  <div id="mapid"></div>
+  </div>
    <!-- Make sure you put this AFTER Leaflet's CSS -->
  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
